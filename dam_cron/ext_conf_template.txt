@@ -1,0 +1,2 @@
+  # cat=basic/enable; type=boolean; label=Enable Cron Script: If not set the cron script will just exit if called.
+enable = 0
