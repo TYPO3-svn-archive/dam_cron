@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Cron job script and setup module for cron job configuration.',
 	'category' => 'module',
 	'shy' => 0,
-	'version' => '1.0.2',
+	'version' => '1.0.3',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -27,9 +27,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearcacheonload' => 0,
 	'lockType' => '',
-	'author' => 'Rene Fritz',
-	'author_email' => 'r.fritz@colorcube.de',
-	'author_company' => 'Colorcube - digital media lab, www.colorcube.de',
+	'author' => 'The DAM development team',
+	'author_email' => 'typo3-project-dam@lists.netfielders.de',
+	'author_company' => '',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
 	'constraints' => array(
@@ -40,7 +40,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:11:{s:9:"ChangeLog";s:4:"c791";s:21:"ext_conf_template.txt";s:4:"e1da";s:12:"ext_icon.gif";s:4:"d28d";s:17:"ext_localconf.php";s:4:"864d";s:14:"ext_tables.php";s:4:"f59e";s:16:"locallang_db.xml";s:4:"027e";s:13:"cron/conf.php";s:4:"8170";s:20:"cron/dam_indexer.php";s:4:"0741";s:38:"modfunc1/class.tx_damcron_modfunc1.php";s:4:"e3ab";s:22:"modfunc1/locallang.xml";s:4:"6544";s:14:"doc/manual.sxw";s:4:"e13b";}',
+	'_md5_values_when_last_written' => '',
 );
 
 ?>
