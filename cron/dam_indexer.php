@@ -1,33 +1,30 @@
 #!/usr/bin/php -q
 <?php
 
-
-$script = $_SERVER['argv'][0];
-chdir(dirname($script));
-
-
-	// Defining circumstances for CLI mode:
+     // Defining circumstances for CLI mode:
 define('TYPO3_cliMode', TRUE);
+
+    // Defining PATH_thisScript here: Must be the ABSOLUTE path of this script (realpath make the trick)
+define('PATH_thisScript', realpath($_SERVER['argv'][0]));
+
+     // change to the script dir
+chdir(dirname(PATH_thisScript));
 
 
 unset($MCONF);
 require ('conf.php');
 require ($BACK_PATH.'init.php');
 
+
+if(!$TYPO3_CONF_VARS['EXTCONF']['dam_cron']['setup']['enable']) {
+	die(PATH_thisScript.' disabled in Extension Manager'."\n");
+}
+
+
+
 require_once(PATH_typo3.'sysext/lang/lang.php');
 $LANG = t3lib_div::makeInstance('language');
 $LANG->init($BE_USER->uc['lang']);
-
-
-// TODO what's that, needed?
-
-#$BE_USER->modAccess($MCONF,1);
-
-
-
-if(!$TYPO3_CONF_VARS['EXTCONF']['dam_cron']['setup']['enable']) {
-	die($script.' disabled in Extension Manager'."\n");
-}
 
 
 

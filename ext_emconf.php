@@ -11,18 +11,18 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Media>Tools>Cron Job',
-	'description' => 'Cron job script and setup module for cron job configuration.',
-	'category' => 'module',
+	'title' => 'Media CLI Indexer',
+	'description' => 'Provides a cli script for indexing files for DAM which can be used by cron jobs.',
+	'category' => 'be',
 	'shy' => 0,
-	'version' => '1.0.2',
-	'dependencies' => 'dam_index',
+	'version' => '1.0.100',
+	'dependencies' => 'dam',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => 'cron',
 	'state' => 'stable',
-	'uploadfolder' => 1,
+	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => '',
 	'clearcacheonload' => 0,
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'dam_index' => '',
+			'dam' => '',
 		),
 		'conflicts' => array(
 		),
