@@ -129,13 +129,13 @@ class dam_cron_indexer extends tx_dam_SCbase {
 		if($this->fileProcessingScript) {
 			if (is_file($absFile)) {
 				if($indexObj->isDryRun()) {
-					echo 'not executed (dry run): '.str_replace('FILE', "'".$absFile."'", $this->fileProcessingScript."\n");
+					echo 'not executed (dry run): '.str_replace('FILE', escapeshellarg($absFile), $this->fileProcessingScript."\n");
 				} else {
-					echo 'file processing: '.str_replace('FILE', "'".$absFile."'", $this->fileProcessingScript."\n");
-					shell_exec(str_replace('FILE', "'".$absFile."'", $this->fileProcessingScript));
+					echo 'file processing: '.str_replace('FILE', escapeshellarg($absFile), $this->fileProcessingScript."\n");
+					shell_exec(str_replace('FILE', escapeshellarg($absFile), $this->fileProcessingScript));
 				}
 			} else {
-				echo 'file not found for preprocessing: '.str_replace('FILE', "'".$absFile."'", $this->fileProcessingScript."\n");
+				echo 'file not found for preprocessing: '.str_replace('FILE', escapeshellarg($absFile), $this->fileProcessingScript."\n");
 			}
 		}
 	}
