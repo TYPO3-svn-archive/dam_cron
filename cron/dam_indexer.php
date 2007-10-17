@@ -80,6 +80,8 @@ class dam_cron_indexer extends tx_dam_SCbase {
 	}
 
 	function main() {
+		global $TYPO3_CONF_VARS;
+		
 
 		//
 		// Init indexing object
