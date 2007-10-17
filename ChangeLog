@@ -1,3 +1,7 @@
+06-06-27 Rene Fritz  <r.fritz@colorcube.de>
+
+	* Fix: Setup was not written in some circumstances
+
 06-04-11 Rene Fritz  <r.fritz@colorcube.de>
 
 	* Fix: Set indexing run type properly: cron
