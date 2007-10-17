@@ -1,11 +1,15 @@
-06-06-27 Rene Fritz  <r.fritz@colorcube.de>
+2007-10-17  Michael Stucki  <michael@typo3.org>
+
+	* Takeover by the DAM development team
+
+2006-06-27  Rene Fritz  <r.fritz@colorcube.de>
 
 	* Fix: Setup was not written in some circumstances
 
-06-04-11 Rene Fritz  <r.fritz@colorcube.de>
+2006-04-11  Rene Fritz  <r.fritz@colorcube.de>
 
 	* Fix: Set indexing run type properly: cron
 
-06-04-07 Rene Fritz  <r.fritz@colorcube.de>
+2006-04-07  Rene Fritz  <r.fritz@colorcube.de>
 
 	* 1.0 release
