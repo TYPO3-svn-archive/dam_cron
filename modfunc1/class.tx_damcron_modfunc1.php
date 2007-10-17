@@ -153,9 +153,6 @@ $rec = $this->modifyValuesForDisplay($rec);
 
 				$path = tx_dam::path_makeAbsolute($this->pObj->path);
 
-
-				$content .= '</form>';
-				$content .= $this->pObj->doc->form;
 				if (is_file($path.$filename) AND is_readable($path.$filename)) {
 
 					$content.= '<br /><strong>Overwrite existing default indexer setup to this folder:</strong><br />'.htmlspecialchars($this->pObj->path).'<br />';
@@ -174,10 +171,9 @@ $rec = $this->modifyValuesForDisplay($rec);
 				$content.= $this->pObj->doc->section('CRON','',0,1);
 
 				$path = PATH_site.$this->uploadFolder;
-
-				$filename = $this->makeSetupfilenameForPath($this->pObj->path);
-				$content .= '</form>';
-				$content .= $this->pObj->doc->form;
+				$filename = preg_replace('#[^a-zA-Z0-9]#','_',$this->pObj->path);
+				$filename = preg_replace('#_$#','',$filename);
+				$filename = preg_replace('#^_#','',$filename);
 				$content.= '<br /><strong>Save setup as cron indexer setup:</strong><br />'.htmlspecialchars($path).'<br /><input type="text" size="25" maxlength="25" name="filename" value="'.htmlspecialchars($filename).'"> .xml';
 				$content.= '<br /><input type="submit" name="indexSave" value="Save" />';
 
@@ -221,9 +217,7 @@ $rec = $this->modifyValuesForDisplay($rec);
 					$filename = $path.'.indexing.setup.xml';
 				} else {
 					$path = PATH_site.$this->uploadFolder;
-					$filename = t3lib_div::_GP('filename');
-					$filename = $filename ? $filename : $this->makeSetupfilenameForPath($this->pObj->path);
-					$filename = $path.$filename.'.xml';
+					$filename = $path.t3lib_div::_GP('filename').'.xml';
 				}
 
 				$this->index->setPath($this->pObj->path);
@@ -235,9 +229,7 @@ $rec = $this->modifyValuesForDisplay($rec);
 				$setup = $this->index->serializeSetup($extraSetup);
 
 				if ($handle = fopen($filename, 'wb')) {
-					if (fwrite($handle, $setup)) {
-						 $content.= 'Setup written to file<br />'.htmlspecialchars($filename);
-					} else {
+					if (!fwrite($handle, $setup)) {
 						 $content.= 'Can\'t write to file '.htmlspecialchars($filename);
 					}
 					fclose($handle);
@@ -287,18 +279,7 @@ $rec = $this->modifyValuesForDisplay($rec);
 	}
 
 
-	/**
-	 * Creates a filename for a setup from pathname
-	 *
-	 * @param string $path path
-	 * @return string filename
-	 */
-	function makeSetupfilenameForPath($path) {
-		$filename = preg_replace('#[^a-zA-Z0-9]#','_',$path);
-		$filename = preg_replace('#_$#','',$filename);
-		$filename = preg_replace('#^_#','',$filename);
-		return $filename;
-	}
+
 
 // TODO -------------- quick fix - needs to be done right
 

@@ -90,7 +90,6 @@ class dam_cron_indexer extends tx_dam_SCbase {
 
 		$this->index = t3lib_div::makeInstance('tx_dam_indexing');
 		$this->index->init();
-		$this->index->setRunType('cron');
 
 		if (!$this->index->restoreSerializedSetup(t3lib_div::getUrl($this->setupFile))) {
 			die ('Setup file is not a valid indexing setup: '.$this->setupFile."\n");
