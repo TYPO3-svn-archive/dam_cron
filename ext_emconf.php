@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext: "dam_cron"
 #
-# Auto generated 29-09-2007 00:43
+# Auto generated 21-08-2006 01:03
 #
 # Manual updates:
 # Only the data in the array - anything else is removed by next write.
@@ -15,8 +15,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Cron job script and setup module for cron job configuration.',
 	'category' => 'module',
 	'shy' => 0,
-	'version' => '1.0.0',
-	'dependencies' => '',
+	'version' => '1.0.2',
+	'dependencies' => 'dam_index',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
@@ -29,18 +29,21 @@ $EM_CONF[$_EXTKEY] = array(
 	'lockType' => '',
 	'author' => 'Rene Fritz',
 	'author_email' => 'r.fritz@colorcube.de',
-	'author_company' => '',
+	'author_company' => 'Colorcube - digital media lab, www.colorcube.de',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
+			'dam_index' => '',
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:10:{s:21:"ext_conf_template.txt";s:4:"e1da";s:12:"ext_icon.gif";s:4:"d28d";s:17:"ext_localconf.php";s:4:"864d";s:14:"ext_tables.php";s:4:"f59e";s:16:"locallang_db.xml";s:4:"027e";s:13:"cron/conf.php";s:4:"8170";s:20:"cron/dam_indexer.php";s:4:"cb6c";s:38:"modfunc1/class.tx_damcron_modfunc1.php";s:4:"a729";s:22:"modfunc1/locallang.xml";s:4:"6544";s:14:"doc/manual.sxw";s:4:"e13b";}',
+	'_md5_values_when_last_written' => 'a:11:{s:9:"ChangeLog";s:4:"c791";s:21:"ext_conf_template.txt";s:4:"e1da";s:12:"ext_icon.gif";s:4:"d28d";s:17:"ext_localconf.php";s:4:"864d";s:14:"ext_tables.php";s:4:"f59e";s:16:"locallang_db.xml";s:4:"027e";s:13:"cron/conf.php";s:4:"8170";s:20:"cron/dam_indexer.php";s:4:"0741";s:14:"doc/manual.sxw";s:4:"e13b";s:38:"modfunc1/class.tx_damcron_modfunc1.php";s:4:"e3ab";s:22:"modfunc1/locallang.xml";s:4:"6544";}',
+	'suggests' => array(
+	),
 );
 
 ?>
